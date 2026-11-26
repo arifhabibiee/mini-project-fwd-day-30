@@ -1,0 +1,72 @@
+/* Tailwind CSS */
+@import "tailwindcss";
+
+/* Theme */
+@theme {
+  --color-paper: #F5F3ED;
+  --color-ink: #172332;
+  --color-muted: #526073;
+  --color-brand: #183FC6;
+  --color-line: #D2D4D3;
+  --font-sans: "DM Sans", "Segoe UI", Arial, sans-serif;
+  --font-display: "DM Serif Display", Georgia, serif;
+}
+
+/* Global styles */
+@layer base {
+  body { background: #F5F3ED; color: #172332; }
+  html { scroll-behavior: smooth; }
+  a:focus-visible { outline: 3px solid #8B5A00; outline-offset: 4px; }
+}
+
+/* Product ratings */
+.rating-stars {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  position: relative;
+  display: inline-block;
+  color: #AEB5BD;
+}
+.rating-stars-filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #8B5A00;
+}
+
+/* Product cards */
+.product-trigger::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+}
+.product-trigger:focus-visible {
+  outline: none;
+}
+.product-trigger:focus-visible::after {
+  outline: 3px solid #183FC6;
+  outline-offset: 3px;
+}
+.product-card { transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .product-card:hover {
+    border-color: #183FC6;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(23, 35, 50, 0.10);
+  }
+}
+/* Social links */
+.social-link img { filter: brightness(0) saturate(100%); opacity: 0.74; }
+.social-link:hover img, .social-link:focus-visible img { opacity: 0.5; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .product-card { transition: none; }
+}
+
+/* Product detail modal */
+.product-modal::backdrop { background: rgba(23, 35, 50, 0.55); }
+html:has(.product-modal[open]) { overflow: hidden; }
