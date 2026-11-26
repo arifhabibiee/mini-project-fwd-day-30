@@ -31,7 +31,7 @@ npm.cmd ci
 npm.cmd run dev
 ```
 
-Buka alamat localhost yang ditampilkan Vite. `npm ci` menggunakan `package-lock.json` yang tersedia. Jalankan `npm.cmd run build` untuk memeriksa build produksi setelah pengujian. Jangan commit `node_modules` atau `dist`.
+Buka alamat localhost yang ditampilkan Vite. `npm ci` menggunakan `package-lock.json` yang tersedia. Jalankan `npm.cmd run build` untuk memeriksa build produksi setelah pengujian.
 
 ## Project structure
 
